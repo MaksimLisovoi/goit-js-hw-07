@@ -8,16 +8,16 @@ const ingredients = [
 ];
 const ingredientsList = document.getElementById('ingredients')
 
-
-ingredients.forEach(el => {
-    const listItems = document.createElement('li')
-    listItems.textContent = el;
-    // console.log(listItems);
-    ingredientsList.appendChild(listItems);
-   
+const list = [];
+ingredients.map(el => {
+  const listItems = document.createElement('li')
+  listItems.textContent = el;
+  
+  list.push(listItems)
 });
 
- console.log(ingredientsList);
+ingredientsList.append(...list);
+
   
     
 

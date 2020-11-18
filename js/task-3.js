@@ -18,19 +18,12 @@ const images = [
 const gallery = document.getElementById('gallery');
 
 images.forEach(el => {
-    gallery.insertAdjacentHTML("afterbegin", '<li><img>')
-    const imgTags = gallery.querySelectorAll('img')
+    // gallery.insertAdjacentHTML("afterbegin", '<li><img></li>')
+  const imgTags = gallery.querySelectorAll('img')
+  console.log(imgTags );
     imgTags[0].setAttribute("alt", el.alt);
     imgTags[0].setAttribute("src", el.url);
     imgTags[0].setAttribute("width", '300');
-   
-    // const imgTags = document.createElement('img')
-    // console.log(imgTags);
-    // const listItems = document.createElement('li')
-    // imgTags.setAttribute("alt", el.alt);
-    // imgTags.setAttribute("src", el.url);
-    // imgTags.setAttribute("width", '300');
-    // listItems.insertAdjacentElement('afterbegin', imgTags);
-    //  gallery.appendChild(listItems);
+  
 });
 console.log(gallery);
