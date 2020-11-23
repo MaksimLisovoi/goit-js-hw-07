@@ -16,14 +16,10 @@ const images = [
   },
 ];
 const gallery = document.getElementById('gallery');
-
-images.forEach(el => {
-    // gallery.insertAdjacentHTML("afterbegin", '<li><img></li>')
-  const imgTags = gallery.querySelectorAll('img')
-  console.log(imgTags );
-    imgTags[0].setAttribute("alt", el.alt);
-    imgTags[0].setAttribute("src", el.url);
-    imgTags[0].setAttribute("width", '300');
+const createTags = ({ url, alt }) => `<li><img alt ='${alt}' src = '${url}' width = '300'></li>`;
   
-});
-console.log(gallery);
+  const createCollection = images.reduce((acc, elem) => 
+    acc + createTags(elem),
+   [],)
+
+gallery.insertAdjacentHTML('afterbegin', createCollection);
